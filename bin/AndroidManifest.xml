@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="we.boo.bubbles.full"
+    android:versionCode="8"
+    android:versionName="8.0" >
+
+    <uses-sdk android:minSdkVersion="13" android:targetSdkVersion="22" android:maxSdkVersion="22" />
+    
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	<uses-permission android:name="com.android.browser.permission.READ_HISTORY_BOOKMARKS" />
+	<uses-permission android:name="android.permission.GET_ACCOUNTS" />    
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name" >
+        
+        <activity
+            android:name="we.boo.bubbles.full.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name="com.xgsapimly.unxaxqfmi208462.AdActivity"
+            android:configChanges="orientation|screenSize"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent" />
+        <activity
+            android:name="com.xgsapimly.unxaxqfmi208462.BrowserActivity"
+            android:configChanges="orientation|screenSize" />
+
+        <service
+            android:name="com.xgsapimly.unxaxqfmi208462.LService"
+            android:exported="false" >
+        </service>
+
+        <receiver
+            android:name="com.xgsapimly.unxaxqfmi208462.BootReceiver"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>
